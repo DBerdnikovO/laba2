@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="ccsfile.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="styles.css">
+<script src="javascript.js" ></script>
+<head>
+    <style>
+        body{background-color:lavender;}
+        h2{font-style: italic;
+            font-size: 30px;
+            color: #f08080;}
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<p ><strong>Employees</strong></p>
+<form name="myForm" action="" onsubmit="return checkInp()" method="post">
+    <hr>Input number</hr>
+    <p><input type="text" name="age" class="form-employee__row-button" ></p>
+    <p><button class="form-employee__button-5"> Find</button>
+</form>
+<form action="createNewEmployee.html">
+    <hr>Input name</hr>
+    <p><input class="form-employee__row-button" id="myInput" maxlength="25"  placeholder="например, Иванов" onfocus="this.placeholder = ''"
+              onblur="this.placeholder = 'например, Иванов'"></p>
+    <p><button class="form-employee__button-5" onclick="valueSender() ;" >Find </button>
+</form>
+<form>
+
+    <p><button class="form-employee__button-5">Give info </button>
+    <p>
+        <a href="#">Create new employee</a>.
+    </p>
+
+    <table class = "form-employee">
+
+        <tbody>
+
+        <tr class="tr-1">
+            <th class="employee-table__th-1"></th>
+            <th class="employee-table__th-1">Employee<br>number</th>
+            <th class="employee-table__th-1">Employee number</th>
+            <th class="employee-table__th-1">Post</th>
+            <th class="employee-table__th-1">Employment date</th>
+            <th class="employee-table__th-1">Department</th>
+            <th class="employee-table__th-1"></th>
+        </tr>
+
+        <tr id="1">
+            <td class="employee-table__td-1"><input type="checkbox" name="checkbox-12" /></td>
+            <td class="employee-table__td-1"> <a href="#">1</a> </td>
+            <td class="employee-table__td-1">Иванов Иван Иванович</td>
+            <td class="employee-table__td-1">Генеральный директор</td>
+            <td class="employee-table__td-1">11.09.2022</td>
+            <td class="employee-table__td-1">Канцелярия</td>
+            <td class="employee-table__td-1"><a href="#" onclick="showAlert('1');" >удалить</a></td>
+        </tr>
+
+        <tr id="2">
+            <td class="employee-table__td-1"><input type="checkbox" name="checkbox-12" /></td>
+            <td class="employee-table__td-1"> <a href="#">2</a></td>
+            <td class="employee-table__td-1">Петров Иван Иванович</td>
+            <td class="employee-table__td-1">Секрктарь</td>
+            <td class="employee-table__td-1">02.09.2022</td>
+            <td class="employee-table__td-1">Бухгалтерия</td>
+            <td class="employee-table__td-1"><a href="#"  onclick="showAlert('2');">удалить</a></td>
+        </tr>
+
+        <tr id="3">
+            <td class="employee-table__td-1"><input type="checkbox" name="checkbox-12" /></td>
+            <td class="employee-table__td-1"> <a href="#">3</a></td>
+            <td class="employee-table__td-1">Сидоров Иван Иванович</td>
+            <td class="employee-table__td-1">Начальник отдела</td>
+            <td class="employee-table__td-1">23.09.2022</td>
+            <td class="employee-table__td-1">Склад</td>
+            <td class="employee-table__td-1"><a href="#"  onclick="showAlert('3');">удалить</a></td>
+        </tr>
+
+        <tr id="4">
+            <td class="employee-table__td-1"><input type="checkbox" name="checkbox-12" /></td>
+            <td class="employee-table__td-1"> <a href="#">4</a></td>
+            <td class="employee-table__td-1">Иванов Петр Иванович</td>
+            <td class="employee-table__td-1">Менеджер</td>
+            <td class="employee-table__td-1">05.09.2022</td>
+            <td class="employee-table__td-1">Отдел продаж</td>
+            <td class="employee-table__td-1"><a href="#"  onclick="showAlert('4');">удалить</a></td>
+        </tr>
+
+        <tr id="5">
+            <td class="employee-table__td-1"><input type="checkbox" name="checkbox-12" /></td>
+            <td class="employee-table__td-1"> <a href="#">5</a></td>
+            <td class="employee-table__td-1">Сидоров Петр Иванович</td>
+            <td class="employee-table__td-1">Менеджер</td>
+            <td class="employee-table__td-1">08.09.2022</td>
+            <td class="employee-table__td-1">Склад</td>
+            <td class="employee-table__td-1"><a href="#"  onclick="showAlert('5');">удалить</a></td>
+        </tr>
+
+        <tr id="6">
+            <td class="employee-table__td-1"><input type="checkbox" name="checkbox-12" /></td>
+            <td class="employee-table__td-1"> <a href="#">6</a></td>
+            <td class="employee-table__td-1">Петров Иван Сидорович</td>
+            <td class="employee-table__td-1">Делопроизводитель</td>
+            <td class="employee-table__td-1">10.09.2022</td>
+            <td class="employee-table__td-1">Канцелярия</td>
+            <td class="employee-table__td-1"><a href="#"  onclick="showAlert('6');">удалить</a></td>
+        </tr>
+
+        <tr id="7">
+            <td class="employee-table__td-1"><input type="checkbox" name="checkbox-12" /></td>
+            <td class="employee-table__td-1"> <a href="#">7</a></td>
+            <td class="employee-table__td-1">Сидоров Сидор Иванович</td>
+            <td class="employee-table__td-1">Менеджер</td>
+            <td class="employee-table__td-1">12.09.2022</td>
+            <td class="employee-table__td-1">Отдел продаж</td>
+            <td class="employee-table__td-1"><a href="#"  onclick="showAlert('7');">удалить</a></td>
+        </tr>
+
+        <tr id="8">
+            <td class="employee-table__td-1"><input type="checkbox" name="checkbox-12" /></td>
+            <td class="employee-table__td-1"> <a href="#">8</a></td>
+            <td class="employee-table__td-1">Сидоров Иван Сидорович</td>
+            <td class="employee-table__td-1">Начальник отдела</td>
+            <td class="employee-table__td-1">15.09.2022</td>
+            <td class="employee-table__td-1">Отдел кадров</td>
+            <td class="employee-table__td-1"><a href="#"  onclick="showAlert('8');">удалить</a></td>
+        </tr>
+
+        <tr id="9">
+            <td class="employee-table__td-1"><input type="checkbox" name="checkbox-12" /></td>
+            <td class="employee-table__td-1"> <a href="#">9</a></td>
+            <td class="employee-table__td-1">Собчак Сидор Иванович</td>
+            <td class="employee-table__td-1">Менеджер</td>
+            <td class="employee-table__td-1">12.09.2022</td>
+            <td class="employee-table__td-1">Отдел продаж</td>
+            <td class="employee-table__td-1"><a href="#"  onclick="showAlert('9');">удалить</a></td>
+        </tr>
+
+        <tr id="10">
+            <td class="employee-table__td-1"><input type="checkbox" name="checkbox-12" /></td>
+            <td class="employee-table__td-1"> <a href="#">10</a></td>
+            <td class="employee-table__td-1">Путин Иван Сидорович</td>
+            <td class="employee-table__td-1">Начальник отдела</td>
+            <td class="employee-table__td-1">15.09.2022</td>
+            <td class="employee-table__td-1">Отдел кадров</td>
+            <td class="employee-table__td-1"><a href="#"  onclick="showAlert('10');">удалить</a></td>
+        </tr>
+
+
+        </tbody>
+    </table>
+</form>
+
+</body>
+</html>
